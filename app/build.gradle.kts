@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -35,6 +36,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
@@ -50,5 +52,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("androidx.room:room-runtime:2.5.0")
+    kapt("androidx.room:room-compiler:2.5.0")
+    implementation ("org.java-websocket:Java-WebSocket:1.5.2") // WebSocket kütüphanesi
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1") // ViewModel
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")  // LiveData
+    implementation ("androidx.databinding:databinding-runtime:7.4.2") // DataBinding
+    implementation ("androidx.recyclerview:recyclerview:1.3.1") // RecyclerView
+
 
 }
